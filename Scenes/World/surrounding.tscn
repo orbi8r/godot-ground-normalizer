@@ -1,0 +1,325 @@
+[gd_scene load_steps=35 format=3 uid="uid://eguwl22ilao7"]
+
+[ext_resource type="Script" path="res://Scenes/World/surrounding.gd" id="1_te4hy"]
+[ext_resource type="Texture2D" uid="uid://cmnsjj701ldec" path="res://Assets/Surrounding/Green/texture_05.png" id="1_xgyyu"]
+[ext_resource type="Texture2D" uid="uid://bjmjh6y5hvqnd" path="res://Assets/Surrounding/Light/texture_05.png" id="2_cxpxo"]
+[ext_resource type="PackedScene" uid="uid://css5sx7kaevmd" path="res://Scenes/Player/player.tscn" id="3_68x23"]
+[ext_resource type="Texture2D" uid="uid://6osfk15q38y5" path="res://Assets/Surrounding/Orange/texture_05.png" id="3_h67yq"]
+[ext_resource type="Texture2D" uid="uid://clxvmy8mleisx" path="res://Assets/Surrounding/Purple/texture_05.png" id="4_at0y6"]
+[ext_resource type="Texture2D" uid="uid://l1tbji571c2i" path="res://Assets/Surrounding/Red/texture_05.png" id="5_2uyr3"]
+[ext_resource type="Texture2D" uid="uid://7cd3ljwu80pj" path="res://Assets/Surrounding/Dark/texture_02.png" id="6_degaq"]
+[ext_resource type="Texture2D" uid="uid://ba2v8na8w27v3" path="res://Assets/Surrounding/Green/texture_02.png" id="7_dclc0"]
+[ext_resource type="Texture2D" uid="uid://dgbl3w2s3m312" path="res://Assets/Surrounding/Light/texture_02.png" id="8_i3yo5"]
+[ext_resource type="Texture2D" uid="uid://3rm85737lyef" path="res://Assets/Surrounding/Orange/texture_02.png" id="9_nleyq"]
+[ext_resource type="Texture2D" uid="uid://d0scn4gkuihpx" path="res://Assets/Surrounding/Purple/texture_02.png" id="10_ary2u"]
+[ext_resource type="Texture2D" uid="uid://kvpasneg3oy6" path="res://Assets/Surrounding/Red/texture_02.png" id="11_5yvp4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1i2s"]
+size = Vector3(1, 33.8578, 23.4722)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k4vo7"]
+load_path = "res://.godot/imported/texture_05.png-bd32b4aa8ff499ad0ebec5023e8c178a.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brthg"]
+albedo_texture = SubResource("CompressedTexture2D_k4vo7")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0qtc"]
+albedo_texture = ExtResource("1_xgyyu")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yedrw"]
+albedo_texture = ExtResource("2_cxpxo")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0bpdk"]
+albedo_texture = ExtResource("3_h67yq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6p7c1"]
+albedo_texture = ExtResource("4_at0y6")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ad5a"]
+albedo_texture = ExtResource("5_2uyr3")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wpo2"]
+albedo_texture = ExtResource("6_degaq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67px0"]
+albedo_texture = ExtResource("7_dclc0")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tdjbw"]
+albedo_texture = ExtResource("8_i3yo5")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5kls"]
+albedo_texture = ExtResource("9_nleyq")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jih5o"]
+albedo_texture = ExtResource("10_ary2u")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1elk"]
+albedo_texture = ExtResource("11_5yvp4")
+uv1_triplanar = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x0w22"]
+rough = true
+bounce = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epflp"]
+albedo_color = Color(0.741176, 0.0980392, 0, 1)
+metallic = 0.9
+metallic_specular = 0.6
+roughness = 0.25
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yttco"]
+radius = 0.2
+height = 0.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e7d3n"]
+radius = 0.2
+height = 0.8
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n1xh8"]
+
+[sub_resource type="Sky" id="Sky_o4le1"]
+sky_material = SubResource("ProceduralSkyMaterial_n1xh8")
+
+[sub_resource type="Environment" id="Environment_icprl"]
+background_mode = 2
+sky = SubResource("Sky_o4le1")
+ambient_light_source = 1
+ambient_light_color = Color(1, 1, 1, 1)
+tonemap_mode = 2
+glow_enabled = true
+fog_light_energy = 1.16
+fog_sun_scatter = 7.05
+volumetric_fog_density = 0.01
+adjustment_brightness = 0.93
+adjustment_contrast = 1.47
+adjustment_saturation = 2.42
+
+[node name="Surrounding" type="Node3D"]
+script = ExtResource("1_te4hy")
+
+[node name="Physical" type="Node3D" parent="."]
+
+[node name="RotationNodes" type="Node3D" parent="Physical"]
+
+[node name="FloorRotationTimer" type="Timer" parent="Physical/RotationNodes"]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="Corner1" type="Area3D" parent="Physical/RotationNodes"]
+
+[node name="Corner1hitbox" type="CollisionShape3D" parent="Physical/RotationNodes/Corner1"]
+transform = Transform3D(0.879416, 0.475977, -0.00859554, -0.475954, 0.879457, 0.00465205, 0.00977369, 1.20948e-10, 0.999952, -8.69674, -11.1022, 0.00262024)
+shape = SubResource("BoxShape3D_v1i2s")
+
+[node name="Corner2" type="Area3D" parent="Physical/RotationNodes"]
+transform = Transform3D(0.309017, 0, -0.951057, 0, 1, 0, 0.951057, 0, 0.309017, 0, 0, 0)
+
+[node name="Corner2hitbox" type="CollisionShape3D" parent="Physical/RotationNodes/Corner2"]
+transform = Transform3D(0.879416, 0.475977, -0.00859554, -0.475954, 0.879457, 0.00465205, 0.00977369, 1.20948e-10, 0.999952, -8.69674, -11.1022, 0.00262024)
+shape = SubResource("BoxShape3D_v1i2s")
+
+[node name="Corner3" type="Area3D" parent="Physical/RotationNodes"]
+transform = Transform3D(-0.809017, 0, -0.587785, 0, 1, 0, 0.587785, 0, -0.809017, 0, 0, 0)
+
+[node name="Corner3hitbox" type="CollisionShape3D" parent="Physical/RotationNodes/Corner3"]
+transform = Transform3D(0.879416, 0.475977, -0.00859554, -0.475954, 0.879457, 0.00465205, 0.00977369, 1.20948e-10, 0.999952, -8.69674, -11.1022, 0.00262024)
+shape = SubResource("BoxShape3D_v1i2s")
+
+[node name="Corner4" type="Area3D" parent="Physical/RotationNodes"]
+transform = Transform3D(-0.809017, 0, 0.587785, 0, 1, 0, -0.587785, 0, -0.809017, 0, 0, 0)
+
+[node name="Corner4hitbox" type="CollisionShape3D" parent="Physical/RotationNodes/Corner4"]
+transform = Transform3D(0.879416, 0.475977, -0.00859554, -0.475954, 0.879457, 0.00465205, 0.00977369, 1.20948e-10, 0.999952, -8.69674, -11.1022, 0.00262024)
+shape = SubResource("BoxShape3D_v1i2s")
+
+[node name="Corner5" type="Area3D" parent="Physical/RotationNodes"]
+transform = Transform3D(0.309017, 0, 0.951056, 0, 1, 0, -0.951056, 0, 0.309017, 0, 0, 0)
+
+[node name="Corner5hitbox" type="CollisionShape3D" parent="Physical/RotationNodes/Corner5"]
+transform = Transform3D(0.879416, 0.475977, -0.00859554, -0.475954, 0.879457, 0.00465205, 0.00977369, 1.20948e-10, 0.999952, -8.69674, -11.1022, 0.00262024)
+shape = SubResource("BoxShape3D_v1i2s")
+
+[node name="Dodecahedron" type="Node3D" parent="Physical"]
+unique_name_in_owner = true
+
+[node name="DodecahedronShape" type="CSGCombiner3D" parent="Physical/Dodecahedron"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -27, 0)
+calculate_tangents = false
+use_collision = true
+
+[node name="Floor1" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_brthg")
+
+[node name="Floor2" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(-0.447759, 0.894154, 1.50996e-07, 0.894154, 0.447759, 2.54318e-13, -6.76095e-08, 1.35014e-07, -1, -24.2727, 14.9431, 0)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_y0qtc")
+
+[node name="Floor3" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(-0.138365, 0.276309, 0.951057, 0.894154, 0.447759, 0, -0.425844, 0.850391, -0.309017, -7.50066, 14.9431, -23.0847)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_yedrw")
+
+[node name="Floor4" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(0.362245, -0.723386, 0.587785, 0.894154, 0.447759, -3.60011e-07, -0.263186, 0.525571, 0.809017, 19.637, 14.9431, -14.2671)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_0bpdk")
+
+[node name="Floor5" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(0.362245, -0.723386, -0.587785, 0.894154, 0.447759, 3.60011e-07, 0.263186, -0.525571, 0.809017, 19.637, 14.9431, 14.2671)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_6p7c1")
+
+[node name="Floor6" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(-0.138365, 0.276309, -0.951057, 0.894154, 0.447759, 1.73435e-07, 0.425844, -0.850391, -0.309017, -7.50066, 14.9431, 23.0847)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_0ad5a")
+
+[node name="Floor7" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(0.809017, 5.74841e-15, -0.587785, -5.13858e-08, -1, -7.07265e-08, -0.587785, 8.74228e-08, -0.809017, 0, 54, -4.72083e-06)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_2wpo2")
+
+[node name="Floor8" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(-0.362245, 0.723386, 0.587785, -0.894154, -0.447759, -3.55924e-07, 0.263186, -0.525571, 0.809017, -19.637, 39.0569, 14.2671)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_67px0")
+
+[node name="Floor9" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(0.138365, -0.276309, 0.951056, -0.894154, -0.447759, -1.86943e-07, 0.425844, -0.850391, -0.309017, 7.50067, 39.0569, 23.0847)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_tdjbw")
+
+[node name="Floor10" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(0.447759, -0.894154, 1.33321e-07, -0.894154, -0.447759, -6.65584e-08, 1.19209e-07, -8.9407e-08, -1, 24.2727, 39.0569, 4.75416e-08)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_j5kls")
+
+[node name="Floor11" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(0.138365, -0.276309, -0.951057, -0.894154, -0.447759, 1.73067e-07, -0.425844, 0.850391, -0.309017, 7.50067, 39.0569, -23.0847)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_jih5o")
+
+[node name="Floor12" type="CSGPolygon3D" parent="Physical/Dodecahedron/DodecahedronShape"]
+transform = Transform3D(-0.362245, 0.723386, -0.587785, -0.894154, -0.447759, 3.64097e-07, -0.263186, 0.525571, 0.809017, -19.637, 39.0569, -14.2671)
+use_collision = true
+collision_layer = 65535
+collision_mask = 0
+polygon = PackedVector2Array(0, 0, 0, 1, 20, 1, 20.74, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 5
+material = SubResource("StandardMaterial3D_w1elk")
+
+[node name="RotationMarker" type="Marker3D" parent="Physical/Dodecahedron"]
+unique_name_in_owner = true
+
+[node name="TestCapsule" type="RigidBody3D" parent="Physical/Dodecahedron"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.55571)
+physics_material_override = SubResource("PhysicsMaterial_x0w22")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Physical/Dodecahedron/TestCapsule"]
+material_override = SubResource("StandardMaterial3D_epflp")
+mesh = SubResource("CapsuleMesh_yttco")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Physical/Dodecahedron/TestCapsule"]
+shape = SubResource("CapsuleShape3D_e7d3n")
+
+[node name="Visual" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Visual"]
+environment = SubResource("Environment_icprl")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Visual"]
+light_volumetric_fog_energy = 0.0
+omni_range = 40.0
+omni_attenuation = 0.0441942
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_68x23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.00886, 0)
+
+[connection signal="body_entered" from="Physical/RotationNodes/Corner1" to="." method="_on_corner_1_body_entered"]
+[connection signal="body_entered" from="Physical/RotationNodes/Corner2" to="." method="_on_corner_2_body_entered"]
+[connection signal="body_entered" from="Physical/RotationNodes/Corner3" to="." method="_on_corner_3_body_entered"]
+[connection signal="body_entered" from="Physical/RotationNodes/Corner4" to="." method="_on_corner_4_body_entered"]
+[connection signal="body_entered" from="Physical/RotationNodes/Corner5" to="." method="_on_corner_5_body_entered"]

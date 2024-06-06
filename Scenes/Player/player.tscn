@@ -1,0 +1,226 @@
+[gd_scene load_steps=10 format=3 uid="uid://css5sx7kaevmd"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8c6n1"]
+
+[sub_resource type="Animation" id="Animation_luo5b"]
+resource_name = "Drop_High"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0469911, 0.28119, 0.645923, 1.16834),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.2, 0), Vector3(0, -0.7, 0), Vector3(0, -0.4, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0510663, 0.28119, 0.684637, 1.18996),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0401426, 0, -0.020944), Vector3(-0.523599, 0, -0.0349066), Vector3(-0.349066, 0, 0.0174533), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2cjmm"]
+resource_name = "Drop_Low"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0407522, 0.150909, 0.612069),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0448275, 0.150909, 0.614106),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.00698132), Vector3(-0.0174533, 0, -0.0174533), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l0igt"]
+resource_name = "Drop_Medium"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0407522, 0.150909, 0.368808, 0.612069),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.33, 0), Vector3(0, -0.3, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0448275, 0.150909, 0.35862, 0.614106),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.00698132), Vector3(-0.0401426, 0, -0.020944), Vector3(-0.0349066, 0, -0.00349066), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_h5a4j"]
+resource_name = "Jump"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0611283, 0.305768, 0.612069),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0.1, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.063166, 0.305768, 0.614106),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.0698132, 0, -0.0174533), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hbfwy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Eyes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Eyes:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q42bd"]
+_data = {
+"Drop_High": SubResource("Animation_luo5b"),
+"Drop_Low": SubResource("Animation_2cjmm"),
+"Drop_Medium": SubResource("Animation_l0igt"),
+"Jump": SubResource("Animation_h5a4j"),
+"RESET": SubResource("Animation_hbfwy")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4rt2d"]
+height = 1.2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ldm5i"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_8c6n1")
+crouch_head_height = 1.1
+
+[node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="Neck" type="Node3D" parent="Head"]
+unique_name_in_owner = true
+
+[node name="Animated" type="AnimationPlayer" parent="Head/Neck"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_q42bd")
+}
+
+[node name="Eyes" type="Camera3D" parent="Head/Neck"]
+unique_name_in_owner = true
+cull_mask = 1048573
+
+[node name="ItemDetector" type="RayCast3D" parent="Head/Neck/Eyes"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -5)
+
+[node name="MarkerHand" type="Marker3D" parent="Head/Neck/Eyes"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.76122)
+
+[node name="BodyCollision_Crouching" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("CapsuleShape3D_4rt2d")
+
+[node name="BodyCollision_Standing" type="CollisionShape3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ldm5i")
+disabled = true
+
+[node name="CheckAboveHead" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, 2, 0)
+
+[node name="ObjectPickedName" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.614
+anchor_right = 0.5
+anchor_bottom = 0.614
+offset_left = -294.0
+offset_top = -39.872
+offset_right = 297.0
+offset_bottom = -4.87201
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crosshair" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.278431)
